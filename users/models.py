@@ -1,7 +1,7 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinLengthValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 
-class User(models.model):
+class User(models.Model):
     name = models.CharField(max_length=120)
     email = models.EmailField(unique=True, db_index=True)
     age = models.PositiveSmallIntegerField(

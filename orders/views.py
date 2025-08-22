@@ -7,7 +7,7 @@ class OrderViewSet(mixins.CreateModelMixin,
                    mixins.UpdateModelMixin,
                    mixins.ListModelMixin,
                    viewsets.GenericViewSet):
-    queryset = Order.objects.select_related("user".all())
+    queryset = Order.objects.select_related("user").all()
     serializer_class = OrderSerializer
     lookup_field = "id"
 

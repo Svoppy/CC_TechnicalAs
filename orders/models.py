@@ -9,7 +9,7 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        indexes = [models.Indexes(fields=["user"])]
+        indexes = [models.Index(fields=["user"])]
         ordering = ["-created_at"]
 
     def __str__(self):
