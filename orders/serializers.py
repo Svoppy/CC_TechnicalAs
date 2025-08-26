@@ -9,4 +9,11 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = ["id", "title", "description", "user","created_at", "updated_at"]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def to_representation(self, instance):
+        from users.serializers import UserSerializer
+        representation = super().to_representation(instance)
+
+        representation['user'] = UserSerializer(instance.user).data
+        return representation
         

@@ -9,4 +9,4 @@ class UserViewSet(mixins.CreateModelMixin,
                   viewsets.GenericViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    lookuo_field = "id"
+    lookup_field = "id"

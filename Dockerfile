@@ -10,7 +10,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl netcat-openbsd && rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml poetry.lock* requirements.txt* /app/
+COPY requirements.txt /app/
 
 # Вариант 1: requirements.txt
 RUN if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
